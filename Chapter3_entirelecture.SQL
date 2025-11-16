@@ -34,3 +34,11 @@ CREATE TABLE ForexAssets (
     PurchasedAt DATETIME
 );
 
+ALTER TABLE ETFAssets
+ADD email VARCHAR (50) NOT NULL
+ALTER TABLE CryptoPurchases
+ADD email VARCHAR (50) NOT NULL
+ALTER TABLE StockAssets
+ADD email VARCHAR (50) NOT NULL
+ALTER TABLE ForexAssets
+ADD email VARCHAR (50) NOT NULL
