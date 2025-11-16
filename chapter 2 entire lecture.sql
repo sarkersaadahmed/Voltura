@@ -55,3 +55,6 @@ SELECT
 FROM BoughtCryptoBeginner
 JOIN ForexAssetsBeginner
 	ON BoughtCryptoBeginner.ID = ForexAssetsBeginner.ID
+
+
+
