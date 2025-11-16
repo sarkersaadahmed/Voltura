@@ -33,7 +33,7 @@ CREATE TABLE ForexAssets (
     Quantity DECIMAL(18,4),
     PurchasedAt DATETIME
 );
-
+--add column
 ALTER TABLE ETFAssets
 ADD email VARCHAR (50) NOT NULL
 ALTER TABLE CryptoPurchases
@@ -42,3 +42,16 @@ ALTER TABLE StockAssets
 ADD email VARCHAR (50) NOT NULL
 ALTER TABLE ForexAssets
 ADD email VARCHAR (50) NOT NULL
+
+--drop column
+ALTER TABLE CryptoPurchases
+DROP COLUMN Fee;
+
+--alter column (change size of that column)
+ALTER TABLE CryptoPurchases
+ALTER COLUMN Name VARCHAR(100);
+
+--rename column
+EXEC sp_rename 'CryptoPurchases.BuyPrice', 'PurchasePrice', 'COLUMN';
+
+
