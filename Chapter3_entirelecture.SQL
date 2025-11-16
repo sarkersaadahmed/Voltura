@@ -28,7 +28,7 @@ CREATE TABLE StockAssets (
 CREATE TABLE ForexAssets (
     ID INT IDENTITY(1,1) PRIMARY KEY,
     Name VARCHAR(50),
-    Symbol VARCHAR(15),
+    Symbol VARCHAR(15), --varchar simply means special characters
     BuyPrice DECIMAL(10,5),
     Quantity DECIMAL(18,4),
     PurchasedAt DATETIME
