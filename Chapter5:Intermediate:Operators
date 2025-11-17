@@ -1,0 +1,155 @@
+---------------------------------------------------------
+-- CHAPTER: SQL OPERATORS (Comparison, Logical, BETWEEN, IN, LIKE)
+---------------------------------------------------------
+
+
+---------------------------------------------------------
+-- SECTION 1: COMPARISON OPERATORS
+---------------------------------------------------------
+
+-- =  (equal to)
+SELECT * FROM CryptoPurchases
+WHERE Symbol = 'BTC';
+
+-- <> or !=  (not equal)
+SELECT * FROM CryptoPurchases
+WHERE Symbol <> 'ETH';
+
+-- >  (greater than)
+SELECT * FROM CryptoPurchases
+WHERE BuyPrice > 1000;
+
+-- <  (less than)
+SELECT * FROM CryptoPurchases
+WHERE Quantity < 5;
+
+-- >=  (greater than or equal)
+SELECT * FROM CryptoPurchases
+WHERE BuyPrice >= 500;
+
+-- <=  (less than or equal)
+SELECT * FROM CryptoPurchases
+WHERE Quantity <= 10;
+
+
+
+---------------------------------------------------------
+-- SECTION 2: LOGICAL OPERATORS (AND, OR, NOT)
+---------------------------------------------------------
+
+-- AND   (both conditions must be true)
+SELECT * FROM CryptoPurchases
+WHERE Symbol = 'BTC'
+AND BuyPrice > 30000;
+
+-- OR    (at least one condition must be true)
+SELECT * FROM CryptoPurchases
+WHERE Symbol = 'BTC'
+OR Symbol = 'ETH';
+
+-- NOT   (negate a condition)
+SELECT * FROM CryptoPurchases
+WHERE NOT Symbol = 'BTC';
+
+
+
+---------------------------------------------------------
+-- SECTION 3: BETWEEN (range check)
+---------------------------------------------------------
+
+-- BETWEEN includes both endpoints
+-- Example: Show purchases between $100 and $1000
+SELECT * FROM CryptoPurchases
+WHERE BuyPrice BETWEEN 100 AND 1000;
+
+-- NOT BETWEEN
+SELECT * FROM CryptoPurchases
+WHERE BuyPrice NOT BETWEEN 100 AND 1000;
+
+
+
+---------------------------------------------------------
+-- SECTION 4: IN (multiple OR conditions)
+---------------------------------------------------------
+
+-- Instead of: WHERE Symbol = 'BTC' OR Symbol = 'ETH' OR Symbol = 'SOL'
+-- Use IN:
+SELECT * FROM CryptoPurchases
+WHERE Symbol IN ('BTC', 'ETH', 'SOL');
+
+-- NOT IN
+SELECT * FROM CryptoPurchases
+WHERE Symbol NOT IN ('BTC', 'ETH', 'SOL');
+
+
+
+---------------------------------------------------------
+-- SECTION 5: LIKE (pattern matching)
+---------------------------------------------------------
+
+-- % = wildcard (any number of characters)
+-- _ = wildcard for ONE character
+
+-- Starts with B
+SELECT * FROM CryptoPurchases
+WHERE Symbol LIKE 'B%';
+
+-- Ends with C
+SELECT * FROM CryptoPurchases
+WHERE Symbol LIKE '%C';
+
+-- Contains "US"
+SELECT * FROM ForexAssets
+WHERE Symbol LIKE '%US%';
+
+-- Single character wildcard
+-- Example: Matches B_T (BAT, BIT, B3T, etc.)
+SELECT * FROM CryptoPurchases
+WHERE Symbol LIKE 'B_T';
+
+-- NOT LIKE
+SELECT * FROM CryptoPurchases
+WHERE Name NOT LIKE '%a%';
+
+
+
+---------------------------------------------------------
+-- SECTION 6: COMBINED LOGIC EXAMPLE
+---------------------------------------------------------
+
+-- Example: Show assets priced between $100 and $1000
+-- for BTC or ETH only, purchased after 2023.
+
+SELECT *
+FROM CryptoPurchases
+WHERE BuyPrice BETWEEN 100 AND 1000
+AND Symbol IN ('BTC', 'ETH')
+AND PurchasedAt > '2023-01-01';
+
+
+
+---------------------------------------------------------
+-- SECTION 7: LIKE + ORDER BY + DISTINCT Example
+---------------------------------------------------------
+
+SELECT DISTINCT Name, Symbol
+FROM StockAssets
+WHERE Name LIKE 'A%'
+ORDER BY Symbol ASC;
+
+
+
+---------------------------------------------------------
+-- SECTION 8: CASE WHEN Example (Optional Refresher)
+---------------------------------------------------------
+
+SELECT
+    Name,
+    Symbol,
+    BuyPrice,
+    CASE
+        WHEN BuyPrice > 500 THEN 'Expensive'
+        WHEN BuyPrice BETWEEN 50 AND 500 THEN 'Medium'
+        ELSE 'Cheap'
+    END AS PriceLevel
+FROM CryptoPurchases;
