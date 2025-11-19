@@ -26,6 +26,8 @@ def get_db():
 
 # -------------------------
 #  I BEG YOU PLEASE THE ONE UDNERNEATH THIS FUCKING CODE IS CRYPTO ASSETS
+# PLEASE DO NOT CHANGE PLEASE DO NOT CHANGE I AM FUCKIGN BEGGING YOU
+# PLEASE DO NOT CHANGE PLEASE DO NOT CHANGE I AM FUCKIGN BEGGING YOU
 # -------------------------
 def BoughtCrypto(name, symbol, buy_price, quantity, purchased_at):
     conn, cursor = get_db()
@@ -41,6 +43,8 @@ def BoughtCrypto(name, symbol, buy_price, quantity, purchased_at):
 
 # -------------------------
 #  I BEG YOU PLEASE THE ONE UDNERNEATH THIS FUCKING CODE IS ETF ASSETS
+# PLEASE DO NOT CHANGE PLEASE DO NOT CHANGE I AM FUCKIGN BEGGING YOU
+# PLEASE DO NOT CHANGE PLEASE DO NOT CHANGE I AM FUCKIGN BEGGING YOU
 # -------------------------
 def ETFAssets(ticker, buy_price, quantity, purchased_at):
     conn, cursor = get_db()
@@ -56,6 +60,8 @@ def ETFAssets(ticker, buy_price, quantity, purchased_at):
 
 # -------------------------
 #  I BEG YOU PLEASE THE ONE UDNERNEATH THIS FUCKING CODE IS FOREX ASSETS
+# PLEASE DO NOT CHANGE PLEASE DO NOT CHANGE I AM FUCKIGN BEGGING YOU
+# PLEASE DO NOT CHANGE PLEASE DO NOT CHANGE I AM FUCKIGN BEGGING YOU
 # -------------------------
 def ForexAssets(pair, buy_price, quantity, purchased_at):
     conn, cursor = get_db()
@@ -71,6 +77,8 @@ def ForexAssets(pair, buy_price, quantity, purchased_at):
 
 # -------------------------
 # I BEG YOU PLEASE THE ONE UDNERNEATH THIS FUCKING CODE IS STOCK ASSETS
+# PLEASE DO NOT CHANGE PLEASE DO NOT CHANGE I AM FUCKIGN BEGGING YOU
+# PLEASE DO NOT CHANGE PLEASE DO NOT CHANGE I AM FUCKIGN BEGGING YOU
 # -------------------------
 def StockAssets(ticker, buy_price, quantity, purchased_at):
     conn, cursor = get_db()
@@ -97,6 +105,7 @@ def StockAssets(ticker, buy_price, quantity, purchased_at):
 # PLEASE DO NOT CHANGE PLEASE DO NOT CHANGE I AM FUCKIGN BEGGING YOU
 #---------------------------------------------------------
 
-def extract_crypto_data(coins=None, currencies=None):
-    
+
+
+#--------------------------------------------------------
 
